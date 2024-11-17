@@ -1,12 +1,20 @@
+const bcrypt = require('bcryptjs');
+const db = require('../models/User');
+
 const indexController = {
     getIndex: (req, res) => {
         res.render('pages/index');
     },
-    getSignUp: (req, res) => {
-        res.render('pages/sign-up');
+    getRegister: (req, res) => {
+        res.render('pages/register');
     },
-    getLogIn: (req, res) => {
-        res.render('pages/log-in');
+    postRegister: async (req, res) => {
+        req.body.password = await bcrypt.hash(req.body.password, 10);
+        db.addUser(req.body);
+        res.redirect('/');
+    },
+    getLogin: (req, res) => {
+        res.render('pages/login');
     }
 }
 
