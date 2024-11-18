@@ -1,7 +1,8 @@
-const { Router } = require('express');
+const { Router, application } = require('express');
 const indexRouter = Router();
 const indexController = require('../controllers/indexController');
 const passport = require('passport');
+const { isAuth } = require('../middleware/isAuth');
 require('../config/passport');
 
 indexRouter.get('/', indexController.getIndex);
@@ -13,5 +14,7 @@ indexRouter.post('/login', passport.authenticate("local", {
         failureRedirect: "/register"
     })
 );
+indexRouter.get('/logout', indexController.logout);
+indexRouter.get('/protected-route', isAuth, indexController.getProtectedRoute);
 
 module.exports = indexRouter;

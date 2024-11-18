@@ -10,12 +10,26 @@ const indexController = {
     },
     postRegister: async (req, res) => {
         req.body.password = await bcrypt.hash(req.body.password, 10);
-        db.addUser(req.body);
+        await db.addUser(req.body);
         res.redirect('/');
     },
     getLogin: (req, res) => {
         res.render('pages/login');
-    }
+    },
+    getProtectedRoute: (req, res) => {
+        res.render('pages/protected');
+    },
+    logout: (req, res, next) => {
+        req.logout(err => {
+            if (err) {
+                return next(err);
+            }
+            req.session.destroy(() => {
+                res.clearCookie('connect.sid');
+                res.redirect('/login');
+            });
+        });
+    },
 }
 
 module.exports = indexController;
