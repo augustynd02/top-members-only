@@ -3,7 +3,11 @@ const db = require('../models/User');
 
 const indexController = {
     getIndex: (req, res) => {
-        res.render('pages/index');
+        if(req.user) {
+            res.render('pages/index', { user: req.user });
+        } else {
+            res.render('pages/login', { user: req.user });
+        }
     },
     getRegister: (req, res) => {
         res.render('pages/register');
