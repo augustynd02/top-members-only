@@ -4,18 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign up</title>
+    <link rel="stylesheet" href="/header.css">
+    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="/login.css">
+    <link rel="stylesheet" href="/footer.css">
 </head>
 <body>
-    <form action="/login" method="POST">
-        <h2>login</h2>
+    <%- include('../partials/header'); %>
+    <main>
+        <h2>Welcome! Log in to access the CLUB!</h2>
+        <section>
+            <form action="/login" method="POST">
+                <label for="username">Username</label>
+                <input type="text" name="username">
 
-        <label for="username">Username</label>
-        <input type="text" name="username">
+                <label for="password">Password</label>
+                <input type="password" name="password">
 
-        <label for="password">Password</label>
-        <input type="password" name="password">
+                <button type="submit">Submit</button>
+            </form>
+            <p>Don't have an account yet? <a href="/register">Register</a></p>
+        </section>
+    </main>
 
-        <button type="submit">Submit</button>
-    </form>
+    <%- include('../partials/footer'); %>
 </body>
 </html>

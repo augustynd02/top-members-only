@@ -4,12 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
+    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="/header.css">
+    <link rel="stylesheet" href="/footer.css">
 </head>
 <body>
-    <h1>This is a test homepage.</h1>
-    <a href="/register">Register</a>
-    <a href="/login">Login</a>
-    <a href="/logout">Logout</a>
-    <a href="/protected-route">Protected route</a>
+    <%- include("../partials/header") %>
+    <main>
+        <h1>This is a test homepage.</h1>
+        <a href="/register">Register</a>
+        <a href="/login">Login</a>
+        <a href="/logout">Logout</a>
+        <a href="/protected-route">Protected route</a>
+    </main>
+    <%- include("../partials/footer") %>
 </body>
 </html>

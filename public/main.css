@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primary: rgb(28, 25, 36);
+    --color-secondary: rgb(137, 99, 186);
+    --color-error: rgb(218, 44, 56);
+    --color-success: rgb(34, 111, 84);
+    --font-primary: rgb(236, 235, 243);
+    --font-secondary: rgb(15, 15, 15);
+}
+
+body {
+    background-color: var(--color-primary);
+    color: var(--font-primary);
+    font-family: Geist Mono;
+
+    margin: 0;
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
