@@ -1,0 +1,30 @@
+header {
+    display: flex;
+    padding: 1rem 2rem;
+    border-bottom: 2px solid var(--color-secondary)
+}
+
+header h1 {
+    margin: 0;
+    margin-right: auto;
+}
+
+h1 span {
+    color: var(--color-secondary);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+nav a {
+    font-size: 1.2rem;
+    color: var(--color-secondary);
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: var(--font-primary);
+}
