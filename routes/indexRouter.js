@@ -15,6 +15,7 @@ indexRouter.post('/login', passport.authenticate("local", {
     })
 );
 indexRouter.get('/logout', indexController.logout);
+indexRouter.get('/membership', indexController.getMembership);
 indexRouter.get('/protected-route', isAuth, indexController.getProtectedRoute);
 
 module.exports = indexRouter;

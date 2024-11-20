@@ -34,6 +34,11 @@ const indexController = {
             });
         });
     },
+    getMembership: async (req, res) => {
+        const membershipName = await db.getMembership(req.user.membership_id)
+
+        res.render('pages/membership.ejs', { membership_name: membershipName.name });
+    }
 }
 
 module.exports = indexController;
