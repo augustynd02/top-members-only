@@ -4,9 +4,9 @@ const db = require('../models/User');
 const indexController = {
     getIndex: (req, res) => {
         if(req.user) {
-            res.render('pages/index', { user: req.user });
+            res.render('pages/index');
         } else {
-            res.render('pages/login', { user: req.user });
+            res.render('pages/login');
         }
     },
     getRegister: (req, res) => {
