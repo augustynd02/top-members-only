@@ -26,6 +26,10 @@ app.use(passport.session());
 app.use(express.static(__dirname + '/public'));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
+app.use((req, res, next ) => {
+  res.locals.user = req.user || null;
+  next();
+})
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
