@@ -23,7 +23,11 @@
                 </ul>
                 <form action="/membership" method="POST">
                     <input type="hidden" name="newMembershipId" value='2'>
-                    <button>Click to upgrade to <br><span>MEMBER</span></button>
+                    <% if(user.membership_id == 2) { %>
+                        <button disabled>You're already a member.</button>
+                    <% } else { %>
+                        <button>Switch to <span>MEMBER</span></button>
+                    <% } %>
                 </form>
             </div>
             <div class="offer">
@@ -37,7 +41,11 @@
                 </ul>
                 <form action="/membership" method="POST">
                     <input type="hidden" name="newMembershipId" value='3'>
-                    <button>Click to upgrade to <br> <span>ADMIN</span></button>
+                    <% if(user.membership_id == 3) { %>
+                        <button disabled>You're already an admin.</button>
+                    <% } else { %>
+                        <button>Switch to <span>ADMIN</span></button>
+                    <% } %>
                 </form>
             </div>
         </section>

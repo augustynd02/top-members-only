@@ -11,6 +11,19 @@ button {
     font-size: 1.3rem;
     cursor: pointer;
     transition: 0.2s ease;
+    width: 100%;
+}
+
+button[disabled] {
+    background-color: var(--color-primary);
+    border: 2px solid var(--color-secondary);
+    cursor: not-allowed;
+}
+
+button[disabled]:hover {
+    box-shadow: none;
+    border: 2px solid var(--color-error);
+    color: var(--color-error);
 }
 
 button:hover {
@@ -48,4 +61,5 @@ li::marker {
 
 .offer form {
     margin-top: auto;
+    width: 100%;
 }
