@@ -1,0 +1,51 @@
+h2 {
+    font-size: 2.5rem;
+}
+
+button {
+    background-color: var(--color-secondary);
+    color: var(--font-primary);
+    border: none;
+    border-radius: 8px;
+    padding: 1rem;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+button:hover {
+    box-shadow: var(--color-secondary) 0px 4px 8px;
+}
+
+section {
+    display: flex;
+    gap: 2rem;
+}
+
+.offer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 2rem;
+    border: 2px solid var(--color-secondary);
+    border-radius: 16px;
+}
+
+.offer h3 {
+    font-size: 2rem;
+    color: var(--color-secondary);
+}
+
+.offer ul {
+    margin-bottom: 5rem;
+    line-height: 2rem;
+}
+
+li::marker {
+    color: var(--color-secondary);
+}
+
+.offer form {
+    margin-top: auto;
+}
