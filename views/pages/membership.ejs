@@ -13,6 +13,34 @@
     <%- include('../partials/header') %>
     <main>
         <h2>Your current membership status: <%= membership_name %></h2>
+        <section>
+            <div class="offer">
+                <h3>MEMBER</h3>
+                <ul>
+                    <li>View other club member's names on posts</li>
+                    <li>See creation date of messages</li>
+                    <li>Public your own posts to the CLUB</li>
+                </ul>
+                <form action="/membership" method="POST">
+                    <input type="hidden" name="newMembershipId" value='2'>
+                    <button>Click to upgrade to <br><span>MEMBER</span></button>
+                </form>
+            </div>
+            <div class="offer">
+                <h3>ADMIN</h3>
+                <ul>
+                    <li>View other club member's names on posts</li>
+                    <li>See creation date of messages</li>
+                    <li>Public your own posts to the CLUB</li>
+                    <li>Modify all existing posts</li>
+                    <li>Delete available messages from the CLUB</li>
+                </ul>
+                <form action="/membership" method="POST">
+                    <input type="hidden" name="newMembershipId" value='3'>
+                    <button>Click to upgrade to <br> <span>ADMIN</span></button>
+                </form>
+            </div>
+        </section>
     </main>
     <%- include('../partials/footer') %>
 </body>

@@ -38,6 +38,10 @@ const indexController = {
         const membershipName = await db.getMembership(req.user.membership_id)
 
         res.render('pages/membership.ejs', { membership_name: membershipName.name });
+    },
+    postMembership: async (req, res) => {
+        await db.changeMembership(req.user.id, req.body.newMembershipId);
+        res.redirect('/membership');
     }
 }
 
