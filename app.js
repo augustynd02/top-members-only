@@ -34,4 +34,20 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 app.use('/', indexRouter);
+
+app.use((req, res, next) => {
+  const error = new Error("Not found");
+  error.status = 404;
+  next(error)
+})
+
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(err.status || 500);
+  res.render('pages/error', {
+    status: err.status || 500,
+    message: err.message
+  });
+});
+
 app.listen(3000, () => console.log('Server running on port 3000...'));
