@@ -6,6 +6,7 @@ const pool = require('./config/database');
 const expressSession = require('express-session');
 const connectPgSimple = require('connect-pg-simple')(expressSession);
 const passport = require('passport');
+const messagesRouter = require("./routes/messagesRouter");
 
 const pgSession = new connectPgSimple({
     pool,
@@ -34,6 +35,7 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 app.use('/', indexRouter);
+app.use('/messages', messagesRouter);
 
 app.use((req, res, next) => {
   const error = new Error("Not found");
