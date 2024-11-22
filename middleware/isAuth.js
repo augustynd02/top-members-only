@@ -2,6 +2,8 @@ module.exports.isAuth = (req, res, next) => {
     if(req.isAuthenticated()) {
         next();
     } else {
-        res.status(401).json({msg: 'Not authorized'});
+        const error = new Error("Not authorized");
+        error.status = 401;
+        next(error);
     }
 }
