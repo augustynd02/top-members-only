@@ -1,4 +1,4 @@
-const { Router, application } = require('express');
+const { Router } = require('express');
 const indexRouter = Router();
 const indexController = require('../controllers/indexController');
 const passport = require('passport');
