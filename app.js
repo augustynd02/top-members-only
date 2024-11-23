@@ -48,7 +48,8 @@ app.use((err, req, res, next) => {
   res.status(err.status || 500);
   res.render('pages/error', {
     status: err.status || 500,
-    message: err.message
+    message: err.message || 'Internal server error',
+    details: err.details || []
   });
 });
 
