@@ -4,16 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Error <%= status %></title>
+    <link rel="stylesheet" href="/header.css">
+    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="/error.css">
+    <link rel="stylesheet" href="/footer.css">
 </head>
 <body>
-    <h1>Error <%= status %></h1>
-    <p><%= message %></p>
-    <% if (details.length > 0) { %>
-        <ul>
-            <% details.forEach(error => { %>
-                <li><%= error.msg %></li>
-            <% }); %>
-        </ul>
-    <% } %>
+    <%- include('../partials/header') %>
+    <main>
+        <section>
+            <h1>Something went wrong...</h1>
+            <p class="error-name">Error <span><%= status %></span></p>
+            <p><%= message %></p>
+            <% if (details.length > 0) { %>
+                <ul>
+                    <% details.forEach(error => { %>
+                        <li><%= error.msg %></li>
+                    <% }); %>
+                </ul>
+            <% } %>
+        </section>
+    </main>
+    <%- include('../partials/footer') %>
 </body>
 </html>
