@@ -8,5 +8,12 @@
 <body>
     <h1>Error <%= status %></h1>
     <p><%= message %></p>
+    <% if (details.length > 0) { %>
+        <ul>
+            <% details.forEach(error => { %>
+                <li><%= error.msg %></li>
+            <% }); %>
+        </ul>
+    <% } %>
 </body>
 </html>
