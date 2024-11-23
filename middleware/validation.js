@@ -28,6 +28,18 @@ const validateRegister = [
         }),
 ]
 
+const validateLogin = [
+    body('username')
+        .trim()
+        .notEmpty().withMessage('Username is required.')
+        .isLength({ min: 2, max: 255 }).withMessage('Username must be at least 2 characters long.'),
+    body('password')
+        .trim()
+        .notEmpty().withMessage('Password is required.')
+        .isLength({ min: 4, max: 255 }).withMessage('Password must be at least 4 characters long.')
+]
+
 module.exports = {
-    validateRegister
+    validateRegister,
+    validateLogin
 }
