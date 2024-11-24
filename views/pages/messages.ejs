@@ -12,13 +12,21 @@
 <body>
     <%- include('../partials/header') %>
     <main>
-        <% messages.forEach(message => { %>
-            <div class="message">
-                <h3><%= message.title %></h3>
-                <p><%= message.message %></p>
-                <span><%= message.created_at %></span>
-            </div>
-        <% }) %>
+        <section>
+            <% messages.forEach(message => { %>
+                <div class="message">
+                    <h3><%= message.title %></h3>
+                    <p><%= message.message %></p>
+                    <div class="info">
+                        <% if (user.membership_id == 1) { %>
+                            <p>Upgrade your membership to view more information.</p>
+                        <% } else { %>
+                            <p>Posted by <span><%= user.firstname %> <%=user.lastname %> </span> at: <%= message.created_at %></p>
+                        <% } %>
+                    </div>
+                </div>
+            <% }) %>
+        </section>
     </main>
     <%- include('../partials/footer') %>
 </body>
