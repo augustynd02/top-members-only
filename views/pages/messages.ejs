@@ -4,8 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Messages</title>
+    <link rel="stylesheet" href="/header.css">
+    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="/messages.css">
+    <link rel="stylesheet" href="/footer.css">
 </head>
 <body>
-    <%= messages %>
+    <%- include('../partials/header') %>
+    <main>
+        <% messages.forEach(message => { %>
+            <div class="message">
+                <h3><%= message.title %></h3>
+                <p><%= message.message %></p>
+                <span><%= message.created_at %></span>
+            </div>
+        <% }) %>
+    </main>
+    <%- include('../partials/footer') %>
 </body>
 </html>
