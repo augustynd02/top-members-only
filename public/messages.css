@@ -1,0 +1,28 @@
+section {
+    width: 60%;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.message {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    border: 2px solid var(--color-secondary);
+    padding: 1rem;
+    word-break: break-all;
+    border-radius: 8px;
+}
+
+.message h3, .message p {
+    margin: 0;
+    line-height: 2rem;
+}
+
+.message h3 {
+    color: var(--color-secondary);
+}
+
+.info p span {
+    color: var(--color-secondary);
+}
