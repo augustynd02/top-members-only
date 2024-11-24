@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/main.css">
     <link rel="stylesheet" href="/messages.css">
     <link rel="stylesheet" href="/footer.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <%- include('../partials/header') %>
@@ -15,7 +16,15 @@
         <section>
             <% messages.forEach(message => { %>
                 <div class="message">
-                    <h3><%= message.title %></h3>
+                    <div class="message-header">
+                        <h3><%= message.title %></h3>
+                        <% if (user.membership_id == 3) { %>
+                            <div class="actions">
+                                <a href="/messages/<%= message.id %>/edit"><span class="material-icons edit">edit</span></a>
+                                <a href="/messages/<%= message.id %>/delete"><span class="material-icons delete">delete</span></a>
+                            </div>
+                        <% } %>
+                    </div>
                     <p><%= message.message %></p>
                     <div class="info">
                         <% if (user.membership_id == 1) { %>
