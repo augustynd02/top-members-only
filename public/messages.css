@@ -4,6 +4,7 @@ section {
     gap: 1rem;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 2rem;
 }
 
 .message {
@@ -12,6 +13,23 @@ section {
     padding: 1rem;
     word-break: break-all;
     border-radius: 8px;
+}
+
+.message-header {
+    display: flex;
+    gap: 1rem;
+}
+
+.edit {
+    color: var(--color-success);
+}
+
+.delete {
+    color: var(--color-error);
+}
+
+.message-header .actions {
+    margin-left: auto;
 }
 
 .message h3, .message p {
