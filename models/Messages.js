@@ -14,6 +14,9 @@ const Messages = {
     },
     editMessage: async (data) => {
         await pool.query('UPDATE messages SET title = $1, message = $2 WHERE id = $3;', [data.title, data.message, data.id]);
+    },
+    deleteMessage: async (data) => {
+        await pool.query('DELETE FROM messages WHERE id = $1', [data.id]);
     }
 }
 

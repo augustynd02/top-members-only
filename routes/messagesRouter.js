@@ -9,5 +9,7 @@ messagesRouter.post('/new', isAuth, messagesController.postNewMessage);
 
 messagesRouter.get('/:id/edit', isAuth, messagesController.getEditMessage);
 messagesRouter.post('/:id/new', isAuth, messagesController.postEditMessage);
+messagesRouter.get('/:id/delete', messagesController.getDeleteMessage);
+messagesRouter.post('/:id/delete', messagesController.postDeleteMessage);
 
 module.exports = messagesRouter;

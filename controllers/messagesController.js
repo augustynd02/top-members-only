@@ -16,11 +16,18 @@ const messagesController = {
     },
     getEditMessage: async (req, res) => {
         const message = await db.getMessageById(req.params.id);
-        console.log(message);
         res.render('pages/editMessage', { message: message });
     },
     postEditMessage: async (req, res) => {
         await db.editMessage(req.body);
+        res.redirect('/messages');
+    },
+    getDeleteMessage: async (req, res) => {
+        const message = await db.getMessageById(req.params.id);
+        res.render('pages/deleteMessage', { message: message });
+    },
+    postDeleteMessage: async (req, res) => {
+        await db.deleteMessage(req.body);
         res.redirect('/messages');
     }
 }
