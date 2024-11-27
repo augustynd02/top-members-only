@@ -16,6 +16,7 @@
         <h2>Users</h2>
         <section>
             <div class="users">
+                <% if (users.length > 0) { %>
                     <% users.forEach(user => { %>
                         <div class="user">
                             <div class="info">
@@ -26,6 +27,9 @@
                             </div>
                         </div>
                     <% }) %>
+                <% } else { %>
+                    <h2>No users to be displayed.</h2>
+                <% } %>
             </div>
         </section>
     </main>
