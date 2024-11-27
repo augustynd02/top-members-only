@@ -1,5 +1,5 @@
 module.exports.isAuth = (req, res, next) => {
-    if(req.isAuthenticated()) {
+    if (req.isAuthenticated()) {
         next();
     } else {
         const error = new Error("Not authorized");

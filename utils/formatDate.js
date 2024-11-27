@@ -1,3 +1,4 @@
+// Used to format the display date for messages
 module.exports.formatDate = (date) => {
     let dateString = String(date);
     let month = dateString.substring(4, 7);
