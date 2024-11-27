@@ -36,11 +36,11 @@ const indexController = {
     },
     getMembership: async (req, res) => {
         const membershipName = await db.getMembership(req.user.membership_id)
-        res.render('pages/membership.ejs', { membership_name: membershipName.name });
+        res.render('pages/user/membership.ejs', { membership_name: membershipName.name });
     },
     postMembership: async (req, res) => {
         await db.changeMembership(req.user.id, req.body.newMembershipId);
-        res.redirect('/membership');
+        res.redirect('/user/membership');
     }
 }
 
