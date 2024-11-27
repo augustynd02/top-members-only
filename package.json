@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "setup-database": "node utils/createDatabase.js"
+    "setup-database": "node utils/setupDatabase.js"
   },
   "author": "",
   "license": "ISC",
