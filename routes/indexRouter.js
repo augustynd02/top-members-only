@@ -1,10 +1,8 @@
 const { Router } = require('express');
 const { isAuth } = require('../middleware/isAuth');
-
-// Passport imports to handle login
-const passport = require('passport');
 const { validateRegister, validateLogin } = require('../middleware/validation');
 const { validationResult } = require('express-validator');
+const passport = require('passport');
 require('../config/passport');
 
 const indexController = require('../controllers/indexController');
