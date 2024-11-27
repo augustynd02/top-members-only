@@ -6,6 +6,7 @@
     <title>New message</title>
     <link rel="stylesheet" href="/header.css">
     <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="/newMessage.css">
     <link rel="stylesheet" href="/footer.css">
 </head>
 <body>
@@ -18,9 +19,12 @@
                 <input type="text" name="title">
 
                 <label for="message">Message</label>
-                <input type="text" name="message">
+                <textarea name="message" rows="10"></textarea>
 
-                <button type="submit">Post</button>
+                <div class="buttons">
+                    <button type="submit">Post</button>
+                    <button type="button" onclick="window.location.href='/messages'">Go back</button>
+                </div>
             </form>
         </section>
     </main>

@@ -6,6 +6,7 @@
     <title>New message</title>
     <link rel="stylesheet" href="/header.css">
     <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="/deleteMessage.css">
     <link rel="stylesheet" href="/footer.css">
 </head>
 <body>
@@ -15,8 +16,10 @@
             <h2>Are you sure you want to delete message "<%= message.title %>"?</h2>
             <form action="/messages/<%= message.id %>/delete" method="POST">
                 <input type="hidden" name="id" value="<%= message.id %>">
-                <button type="submit">Yes, delete.</button>
-                <button type="button"><a href="/messages">No, go back.</a></button>
+                <div class="buttons">
+                    <button type="submit">Yes, delete.</button>
+                    <button type="button" onclick="window.location.href='/messages'">No, go back.</button>
+                </div>
             </form>
         </section>
     </main>

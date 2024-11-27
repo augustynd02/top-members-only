@@ -6,6 +6,7 @@
     <title>New message</title>
     <link rel="stylesheet" href="/header.css">
     <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="/editMessage.css">
     <link rel="stylesheet" href="/footer.css">
 </head>
 <body>
@@ -18,11 +19,14 @@
                 <input type="text" name="title" placeholder="<%= message.title %>">
 
                 <label for="message">Message</label>
-                <input type="text" name="message" placeholder="<%=message.message%>">
+                <textarea name="message" rows="10" placeholder="<%=message.message%>"></textarea>
 
                 <input type="hidden" name="id" value='<%= message.id %>'>
 
-                <button type="submit">Post</button>
+                <div class="buttons">
+                    <button type="submit">Edit</button>
+                    <button type="button" onclick="window.location.href='/messages'">Go back</button>
+                </div>
             </form>
         </section>
     </main>
