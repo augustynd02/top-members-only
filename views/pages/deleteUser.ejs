@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delete message</title>
+    <title>Delete user</title>
     <link rel="stylesheet" href="/header.css">
     <link rel="stylesheet" href="/main.css">
     <link rel="stylesheet" href="/deleteMessage.css">
@@ -13,12 +13,12 @@
     <%- include('../partials/header') %>
     <main>
         <section>
-            <h2>Are you sure you want to delete message "<%= message.title %>"?</h2>
-            <form action="/messages/<%= message.id %>/delete" method="POST">
-                <input type="hidden" name="id" value="<%= message.id %>">
+            <h2>Are you sure you want to delete user "<%= user.username %>"?</h2>
+            <form action="/users/<%= user.id %>/delete" method="POST">
+                <input type="hidden" name="id" value="<%= user.id %>">
                 <div class="buttons">
                     <button type="submit">Yes, delete.</button>
-                    <button type="button" onclick="window.location.href='/messages'">No, go back.</button>
+                    <button type="button" onclick="window.location.href='/users'">No, go back.</button>
                 </div>
             </form>
         </section>
