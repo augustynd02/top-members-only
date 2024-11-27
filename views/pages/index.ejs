@@ -6,16 +6,23 @@
     <title>Homepage</title>
     <link rel="stylesheet" href="/main.css">
     <link rel="stylesheet" href="/header.css">
+    <link rel="stylesheet" href="/index.css">
     <link rel="stylesheet" href="/footer.css">
 </head>
 <body>
     <%- include("../partials/header") %>
     <main>
-        <h1>This is a test homepage.</h1>
-        <a href="/register">Register</a>
-        <a href="/login">Login</a>
-        <a href="/logout">Logout</a>
-        <a href="/protected-route">Protected route</a>
+        <section>
+            <h2>Homepage</h2>
+            <p>What would you like to do?</p>
+            <div class="links">
+                <a href="/messages">View messages</a>
+                <a href="/messages/new">Post a new message</a>
+                <% if(locals.user.membership_id == 3) { %>
+                    <a href="/users">View and manage users</a>
+                <% } %>
+            </div>
+        </section>
     </main>
     <%- include("../partials/footer") %>
 </body>
