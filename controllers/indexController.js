@@ -40,7 +40,7 @@ const indexController = {
     },
     postMembership: async (req, res) => {
         await db.changeMembership(req.user.id, req.body.newMembershipId);
-        res.redirect('/user/membership');
+        res.redirect('/membership');
     }
 }
 
