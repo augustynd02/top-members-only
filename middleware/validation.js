@@ -39,7 +39,19 @@ const validateLogin = [
         .isLength({ min: 4, max: 255 }).withMessage('Password must be at least 4 characters long.')
 ]
 
+const validateMessage = [
+    body('title')
+        .trim()
+        .notEmpty().withMessage('Title is required.')
+        .isLength({ min: 3, max: 255 }).withMessage('Title must be at least 3 characters long.'),
+    body('message')
+        .trim()
+        .notEmpty().withMessage('Message is required.')
+        .isLength({ min: 3 }).withMessage('Message must be at least 3 characters long.'),
+]
+
 module.exports = {
     validateRegister,
-    validateLogin
+    validateLogin,
+    validateMessage
 }
