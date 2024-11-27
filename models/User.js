@@ -18,6 +18,10 @@ const User = {
     },
     deleteUser: async (data) => {
         await pool.query('DELETE FROM users WHERE id = $1', [data.id]);
+        await pool.query(
+            `DELETE FROM session WHERE sess::text LIKE $1`,
+            [`%"passport":{"user":${data.id}}%`]
+          );
     },
     getMembership: async (membership_id) => {
         const { rows } = await pool.query("SELECT name FROM memberships WHERE id = $1", [membership_id]);
